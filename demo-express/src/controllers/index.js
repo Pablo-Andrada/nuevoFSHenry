@@ -5,3 +5,11 @@
 
 // vamos a ir a la base de datos a pedir informacion de los usuarios
 // y responder al cliente con la informacion obtenida
+
+const testControler = (req,res) => {
+    res.status(200).send("estamos recibiendo una respuesta")    
+}
+
+module.exports = {
+    testControler
+};
