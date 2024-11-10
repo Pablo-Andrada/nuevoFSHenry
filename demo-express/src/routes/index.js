@@ -2,11 +2,13 @@
 
 //Tengo definida la solicitud a GET/users => controlador (se lo va a pedir al controlador)
 
-const {testControler} = require("../controllers/index");
 const { Router } = require("express");
+const { userRouter } = require("./userRouter");
+const { postRouter } = require("./postRouter");
 
 const router = Router();
 
-router.get("/", testControler);
+router.use("/users", userRouter);
+router.use("/posts", postRouter);
 
 module.exports = router;
