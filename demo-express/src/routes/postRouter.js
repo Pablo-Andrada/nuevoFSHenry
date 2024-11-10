@@ -1,9 +1,9 @@
 const { Router } = require("express");
-const { postControler } = require("../controllers");
+const postControler = require("../controllers/postController")
 
 const postRouter = Router();
 
-postRouter.get("/", postControler);
+postRouter.get("/", postControler.getAllPost);
 
 
 
