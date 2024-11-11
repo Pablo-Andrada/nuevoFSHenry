@@ -3,7 +3,7 @@ module.exports = {
         const users = [
             {
                 id: 1,
-                name: "Leon"
+                name: "León"
             },
             {
                 id: 2,
