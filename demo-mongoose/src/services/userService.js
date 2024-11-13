@@ -16,7 +16,7 @@
 // let id = 4;
 const { addVehicle } = require("../controllers/userController");
 const User = require("../models/User");
-
+const formatAge = require("../herlpers/formatAge");
 
 module.exports = {
     getUsers: async () => {
@@ -33,7 +33,7 @@ module.exports = {
     },
 
     createUser: async (user) => {
-        const newUser = await User.create(user);
+        const newUser = await User.create({...user,age:formatAge(user.age)});
         return newUser;
     },
 
