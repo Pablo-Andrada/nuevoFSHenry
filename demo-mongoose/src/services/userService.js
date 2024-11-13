@@ -14,12 +14,13 @@
 //     }
 // ]
 // let id = 4;
+const { addVehicle } = require("../controllers/userController");
 const User = require("../models/User");
 
 
 module.exports = {
     getUsers: async () => {
-        const users = await User.find();
+        const users = await User.find().populate("vehicle");
         return users;
     },
     getUserById: async (id) => {
@@ -34,5 +35,12 @@ module.exports = {
     createUser: async (user) => {
         const newUser = await User.create(user);
         return newUser;
+    },
+
+    addVehicle: async ({userId,vehicleId}) => {
+        const user = await User.findById(userId);
+        user.vehicle = vehicleId;
+        await user.save();
+        return user;
     }
 }

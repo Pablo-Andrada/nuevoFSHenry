@@ -22,7 +22,11 @@ module.exports = {
         const user = await userService.findUserByName(name);
         res.status(200).json(user);
     } ,
-
+    addVehicle: async(req,res) => {
+        const { userId,vehicleId } = req.body;
+        await userService.addVehicle({ userId, vehicleId });
+        res.status(200).json({message:"Todo correcto"})
+    },
     createUser: async (req, res) => {
         const { name, email, age } = req.body;
         const newUser = await userService.createUser({ name, email, age });

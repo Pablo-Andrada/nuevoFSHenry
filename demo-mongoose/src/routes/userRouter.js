@@ -6,8 +6,9 @@ const userRouter = Router();
 
 userRouter.get("/", userControler.getAllUser);
 userRouter.get("/byName", userControler.getUserByName);
-userRouter.get("/:id",userControler.getUserById)
-userRouter.post("/", validateUser ,userControler.createUser);
+userRouter.get("/:id", userControler.getUserById);
+userRouter.put("/addVehicle", userControler.addVehicle);
+userRouter.post("/", validateUser, userControler.createUser);
 
 
 module.exports = userRouter;
