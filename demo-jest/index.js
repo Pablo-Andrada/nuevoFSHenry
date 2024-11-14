@@ -4,4 +4,18 @@ const sumar = (a, b) => {
     return resultado;
 }
 
-module.exports = sumar;
+const calcularTotal = (items) => {
+    if (!items.length) throw ("Factura inválida");
+
+    let total = 0;
+
+    for (let item of items) {
+        total += item.quantity * item.price;
+    }
+    return total;
+}
+
+module.exports = {
+    sumar,
+    calcularTotal
+};

@@ -1,4 +1,4 @@
-const sumar = require("../index");
+const {sumar} = require("../index");
 
 const mockSumar = jest.fn(sumar);
 
