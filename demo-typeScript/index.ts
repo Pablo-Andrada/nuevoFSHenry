@@ -1,6 +1,16 @@
-const num1: Number = 45;
-const num2: Number = 55;
+const nombre: string = "Jorge";
 
-// const sumar = (a, b) => a + b; 
+const saludar = (name:string):string => {
+    return `Hola ${name}`
+}
 
-// console.log(sumar(num1,num2));
+console.log(saludar(nombre));
+
+saludar("Pedro");
+saludar("Maria");
+
+const calcularTotal = (quantity: number, price: number): number => {
+    return quantity * price;
+}
+
+console.log( calcularTotal(5, 10));

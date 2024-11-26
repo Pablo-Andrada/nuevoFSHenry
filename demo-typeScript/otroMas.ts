@@ -1,1 +1,0 @@
-const cosas = ["Hola como andas?",12,36,true]
