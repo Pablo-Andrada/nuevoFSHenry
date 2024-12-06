@@ -6,7 +6,6 @@ const Card = ({character, handleOnClick}) => {
             <h2>{name}</h2>
             <h3>{house}</h3>
             <p>{alternate_names[0]}</p>
-            <img src={image} alt="" />
             <br />
             <button onClick={()=>handleOnClick(id)}>Ver detalle</button>
         </div>
