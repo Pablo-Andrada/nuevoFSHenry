@@ -23,7 +23,9 @@ function App() {
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
       .then((response) => response.json())
-      .then((data)=> setCharacters(data))
+      .then((data) => setCharacters(data))
+    
+    return () => {setId(0)}
   }, []);
 
   return (
