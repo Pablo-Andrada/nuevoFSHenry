@@ -1,5 +1,5 @@
-export const createUser = () => { };
+export const createUser = async () => { };
 
-export const getUsers = () => { };
+export const getUsers = async () => { };
 
-export const deleteUser = () => { };
+export const deleteUser = async () => { };
