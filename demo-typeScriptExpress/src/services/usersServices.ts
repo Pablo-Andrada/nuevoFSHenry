@@ -20,6 +20,8 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
     return newUser;
 };
 
-export const getUsersService = async () => { };
+export const getUsersService = async (): Promise<IUser[]> => {
+    return users;
+ };
 
 export const deleteUserService = async () => { };

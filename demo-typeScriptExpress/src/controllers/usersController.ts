@@ -8,6 +8,9 @@ export const createUser = async (req: Request, res: Response) => {
     res.status(201).json(newUser);
 };
 
-export const getUsers = async () => { };
+export const getUsers = async (req: Request, res: Response) => { 
+    const users: IUser[] = await getUsersService();
+    res.status(200).json(users);
+};
 
 export const deleteUser = async () => { };

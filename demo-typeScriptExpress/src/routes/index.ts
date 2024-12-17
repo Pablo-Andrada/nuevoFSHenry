@@ -3,10 +3,10 @@ import { createUser,getUsers,deleteUser } from "../controllers/usersController";
 
 const router: Router = Router();
 
-router.get("/users");
-
 router.post("/users", createUser);
 
-router.delete("/users");
+router.get("/users", getUsers);
+
+router.delete("/users", deleteUser);
 
 export default router;
