@@ -22,7 +22,33 @@ class Repository{
 }
 const newRepository = new Repository();
 
+const refresh = () => {
+    const usersContaniers = document.getElementById('usersContaniers');
+    usersContaniers.innerHTML = '';
 
+    const users = newRepository.users;
+
+    const htmlUsers = users.map((user) => {
+        const name = document.createElement('h2');
+        const username = document.createElement('h3');
+        const email = document.createElement('p');
+    
+        name.innerHTML = user.name;
+        username.innerHTML = user.username;
+        email.innerHTML = user.email;
+
+        const card = document.createElement('div');
+        card.appendChild(name);
+        card.appendChild(username);
+        card.appendChild(email);
+
+        return card;
+    });
+
+    htmlUsers.forEach((card) => {
+        usersContaniers.appendChild(card);
+    })
+}
 
 
 const addUser = () => {
