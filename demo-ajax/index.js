@@ -55,7 +55,7 @@ const addUser = () => {
         alert("No hay mas usuarios!")
     } else {
         $.get(`https://jsonplaceholder.typicode.com/users/${i}`, (data,status) => {
-            newRepository.createUser(data)               
+            newRepository.createUser(data)
             i++;
             refresh();
             
@@ -63,5 +63,6 @@ const addUser = () => {
     }
 
 }
+
 
 addUserButton.addEventListener("click", addUser);
