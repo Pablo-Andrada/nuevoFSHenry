@@ -3,7 +3,10 @@
 //                                      Me va a decir QUE tengo que hacer pero NO lo va hacer
 
 
-//Para esa ruta GET/ users => 
+//Para esa ruta GET/ users =>
 // Vamos a ir a la base de datos a pedir la información de los usuarios Y
 // Y responder al cliente con la informacion obtenida.
+
+
+//El controlador tambien va a manejar errores
 
