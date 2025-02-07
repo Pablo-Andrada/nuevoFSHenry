@@ -10,10 +10,14 @@
 
 //El controlador tambien va a manejar errores
 
-const testController = (req,res) => {
-  res.status(200).send("Estamos recibiendo correctamente una solicitud")    
+const userController = (req,res) => {
+  res.status(200).send("Estamos recibiendo correctamente una solicitud a users")    
+}
+const postController = (req,res) => {
+  res.status(200).send("Estamos recibiendo correctamente una solicitud a posts")    
 }
 
 module.exports = {
-    testController
+  userController,
+  postController
 };
