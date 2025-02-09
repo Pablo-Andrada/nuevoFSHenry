@@ -10,5 +10,18 @@ module.exports = {
                 error: "Error interno del servidor"
             });
         }
+    },
+    createUser: async (req, res) => {
+        const {name} = req.body;
+        try {
+            await userService.createUser(name);
+            res.status(201).json({
+                message: "Usuario creado con éxito."
+            })
+        } catch (error) {
+            res.status(500).json({
+                error: "Error al crear usuario."
+            });
+        }
     }
 }

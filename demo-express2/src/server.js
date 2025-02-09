@@ -10,6 +10,11 @@ server.use(morgan('dev'));
 server.use(cors());
 server.use(express.json());
 
+server.use((req,res,next) => {
+    console.log("Estoy pasando por mi propio middleware");
+    next();
+})
+
 server.use(router);
 
 module.exports = server;
