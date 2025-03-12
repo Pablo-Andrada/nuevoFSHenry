@@ -4,5 +4,5 @@ interface IUser {
     email: string,
     active: boolean,
 }
-
+//exporto IUser
 export default IUser;
