@@ -3,5 +3,5 @@ import { PORT } from "./config/envs";
 
 
 server.listen(3001, () => {
-    console.log(`Server listening on port ${PORT}`);    
+    console.log(`Server listening on port ${PORT} !`);    
 })
