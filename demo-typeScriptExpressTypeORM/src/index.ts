@@ -9,7 +9,11 @@
 import { PORT } from "./config/envs";
 import server from "./server";
 import "reflect-metadata";
+import { AppDataSource } from "./config/data-source";
 
-server.listen(PORT, () => {
-    console.log(`Server listening on PORT ${PORT}`);    
+AppDataSource.initialize()
+    .then(res => {
+        server.listen(PORT, () => {
+            console.log(`Server listening on PORT ${PORT}`);    
+        })    
 })
