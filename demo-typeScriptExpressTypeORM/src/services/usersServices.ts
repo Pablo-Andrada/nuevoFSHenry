@@ -1,4 +1,6 @@
+import { AppDataSource, UserModel } from "../config/data-source";
 import UserDto from "../dto/UserDto";
+import { User } from "../entities/User";
 import IUser from "../interfaces/IUser";
 
 let users: IUser[] = [];
@@ -11,6 +13,7 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
         id,
         name: userData.name,
         email: userData.email,
+        age:userData.age,
         active: userData.active
     }
     // incluir al nuevo usuario dentro dle arreglo
@@ -20,7 +23,8 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
     return newUser;
 };
 
-export const getUsersService = async (): Promise<IUser[]> => {
+export const getUsersService = async ()  => {
+    const users = await UserModel.find();
     return users;
  };
 
