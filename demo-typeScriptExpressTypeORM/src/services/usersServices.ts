@@ -32,7 +32,10 @@ export const getUsersService = async ()  => {
     const users = await UserModel.find();
     return users;
  };
-
+export const getUserByIdService = async (id:number) => {
+    const user = await UserModel.findOneBy({ id });
+    return user;
+}
 export const deleteUserService = async (id: number):Promise<void> => {
     users = users.filter((user:IUser) => {
         return user.id !== id;
