@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
     password: "admin",
     database: "demo_typeorm",
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [],
     subscribers: [],
     migrations: [],
