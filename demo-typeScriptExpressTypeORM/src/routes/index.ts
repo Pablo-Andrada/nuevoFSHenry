@@ -19,7 +19,7 @@ const router: Router = Router();
 
 router.post("/users",createUser);
 router.get("/users", getUsers);
-router.get("/users/id", getUsersById);
+router.get("/users/:id", getUsersById);
 router.delete("/users", deleteUser);
 
 export default router;
