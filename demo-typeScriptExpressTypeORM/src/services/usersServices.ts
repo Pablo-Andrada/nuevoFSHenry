@@ -6,7 +6,7 @@ import IUser from "../interfaces/IUser";
 let users: IUser[] = [];
 let id: number = 1;
 
-export const createUserService = async (userData: UserDto)  => { 
+export const createUserService = async (userData: UserDto):Promise<User>  => { 
     const user = await UserModel.create(userData);
     const result = await UserModel.save(user)
     return user;
@@ -28,11 +28,11 @@ export const createUserService = async (userData: UserDto)  => {
     // return newUser;
 };
 
-export const getUsersService = async ()  => {
+export const getUsersService = async (): Promise<User[]> => {
     const users = await UserModel.find();
     return users;
  };
-export const getUserByIdService = async (id:number) => {
+export const getUserByIdService = async (id: number): Promise<User | null> => {
     const user = await UserModel.findOneBy({ id });
     return user;
 }
