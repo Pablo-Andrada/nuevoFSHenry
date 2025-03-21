@@ -9,12 +9,12 @@ import { createVehicleService, getVehiclesService } from "../services/vehiclesSe
 // };
 
 export const createVehicle = async (req: Request, res: Response) => {
-    const { id,brand, color, model, year } = req.body;
-    const newVehicle: Vehicle = await createVehicleService({ id,brand, color, model, year });
+    const {brand, color, model, year,userId } = req.body;
+    const newVehicle = await createVehicleService({ brand, color, model, year,userId });
     res.status(201).json(newVehicle);
 };
 
 export const getVehicles = async (req: Request, res: Response) => { 
-    const vehicles: Vehicle[] = await getVehiclesService();
+    const vehicles = await getVehiclesService();
     res.status(200).json(vehicles);
 }

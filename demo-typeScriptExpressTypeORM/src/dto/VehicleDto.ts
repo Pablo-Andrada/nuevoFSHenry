@@ -1,9 +1,9 @@
 interface VehicleDto {
-    id: number;  
     brand: string;     
     color: string;  
     model: string;    
-    year: number
+    year: number;
+    userId: number
 }
 
 export default VehicleDto;

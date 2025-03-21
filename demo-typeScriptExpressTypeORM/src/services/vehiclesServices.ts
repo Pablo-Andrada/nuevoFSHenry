@@ -4,9 +4,9 @@ import { Vehicle } from "../entities/Vehicle";
 
 
 export const createVehicleService =async(vehicleData: VehicleDto): Promise<Vehicle> => {
-    const vehicle = await VehicleModel.create(vehicleData);
-    const result = await VehicleModel.save(vehicle);
-    return result;
+    const newvehicle = await VehicleModel.create(vehicleData);
+    const result = await VehicleModel.save(newvehicle);
+    return newvehicle;
 }
 
 export const getVehiclesService = async (): Promise<Vehicle[]>  => {
