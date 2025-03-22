@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm"
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn, OneToMany } from "typeorm"
 import { Vehicle } from "./Vehicle"
 
 @Entity({
@@ -22,9 +22,11 @@ export class User {
     @Column()
     active: boolean
 
-    @OneToOne(() => Vehicle)
-    @JoinColumn()
-    vehicle: Vehicle
+    // @OneToOne(() => Vehicle)
+    // @JoinColumn()
+    // vehicle: Vehicle
+    @OneToMany(() => Vehicle, (vehicle) => vehicle.user)
+    vehicles: Vehicle[]
 }
 
 
