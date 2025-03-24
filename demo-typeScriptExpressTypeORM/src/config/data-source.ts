@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     username: "postgres",
     password: "admin",
     database: "demo_typeorm",
-    // dropSchema: true,
+    // dropSchema: true,   //esta linea sirve para reiniciar la base de datos, es decir los usuarios y vehicles
     synchronize: true,
     logging: false,
     entities: [User, Vehicle],
