@@ -29,7 +29,11 @@ export const createUserService = async (userData: UserDto):Promise<User>  => {
 };
 
 export const getUsersService = async (): Promise<User[]> => {
-    const users = await UserModel.find();
+    const users = await UserModel.find({
+        relations: {
+            vehicles:true
+        }
+    });
     return users;
  };
 export const getUserByIdService = async (id: number): Promise<User | null> => {

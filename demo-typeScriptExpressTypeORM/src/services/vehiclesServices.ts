@@ -13,6 +13,11 @@ export const createVehicleService =async(vehicleData: VehicleDto): Promise<Vehic
         id: vehicleData.userId
     });
 
+    if (user) {
+        newvehicle.user = user;
+        VehicleModel.save(newvehicle);
+    }
+
     // if (user) {
     //     user.vehicle = newvehicle;
     //     await UserModel.save(user)
@@ -24,6 +29,10 @@ export const createVehicleService =async(vehicleData: VehicleDto): Promise<Vehic
 }
 
 export const getVehiclesService = async (): Promise<Vehicle[]>  => {
-    const vehicles = await VehicleModel.find();
+    const vehicles = await VehicleModel.find({
+        relations: {
+            user:true
+        }
+    });
     return vehicles;
 }
