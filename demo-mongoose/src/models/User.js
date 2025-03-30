@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "Vehicle",
     }
-});
-
+} );
+// uso el metodo model de mongoose
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
