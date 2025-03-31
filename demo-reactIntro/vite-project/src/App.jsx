@@ -1,25 +1,24 @@
 import './App.css'
 import CardList from './CardList'
+import React, { useState, useEffect } from 'react';
+
 
 function App() {
-
-  let counter = 111;
   
-  const onClick = () => {
-    return (
-      counter = (counter + 1)
-    )
-  }
-  console.log(counter);
+  const [contador, setContador] = useState(0);
+
+
+  useEffect(() => {
+    console.log("El contador cambió:", contador);    
+  },[contador]);
 
   return (
-    <>
-      <h1> My primera app con React y Vite</h1>
+  <div>
+      <button onClick={()=>{setContador(contador + 1)}}> + </button>
+      <p>Contador: {contador} </p>
+      <button onClick={()=>{setContador(contador - 1)}}> - </button>
 
-      <p >Número de clicks: {counter}</p>
-      <button onClick={onClick()}>clics</button>
-      <CardList/>
-    </>
+  </div>
   )
 }
 
