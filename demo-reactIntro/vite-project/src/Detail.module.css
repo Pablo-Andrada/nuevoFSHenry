@@ -1,43 +1,69 @@
-/* Estilos del modal */
+/* 
+  .modal:
+  - Cubre toda la pantalla para crear el efecto de "overlay" (fondo oscuro semi-transparente).
+  - Se posiciona en el centro de la ventana usando top, left y transform.
+*/
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-  background: rgba(29, 28, 28, 0.5); /* Fondo oscuro semi-transparente */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  position: fixed;          /* Posiciona el modal de forma fija en la ventana */
+  top: 50%;                 /* Ubica el punto medio verticalmente */
+  left: 50%;                /* Ubica el punto medio horizontalmente */
+  transform: translate(-50%, -50%);  /* Ajusta para centrar el contenedor */
+  width: 100vw;             /* Ancho igual al ancho total de la ventana */
+  height: 100vh;            /* Alto igual al alto total de la ventana */
+  background: rgba(29, 28, 28, 0.5); /* Fondo semi-transparente para atenuar el fondo */
+  display: flex;            /* Usa flexbox para centrar el contenido */
+  align-items: center;      /* Centra verticalmente el contenido interno */
+  justify-content: center;  /* Centra horizontalmente el contenido interno */
+  z-index: 1000;            /* Asegura que el modal se muestre por encima de otros elementos */
 }
 
-/* Caja del contenido del modal */
-.modal > div {
-  background: white;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  position: relative;
+/* 
+  .content:
+  - Es el contenedor interno del modal que muestra la información del personaje.
+  - Tiene fondo blanco, bordes redondeados y sombra para destacarlo.
+*/
+.content {
+  background: white;       /* Fondo blanco para resaltar el contenido */
+  padding: 20px;           /* Espaciado interno para separar el contenido de los bordes */
+  width: 90%;              /* Ancho responsivo */
+  max-width: 500px;        /* Ancho máximo para mantener un diseño limpio */
+  border-radius: 10px;     /* Bordes redondeados para un look moderno */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra para dar efecto de profundidad */
+  text-align: center;      /* Centra el texto dentro del contenedor */
+  position: relative;      /* Posicionamiento relativo para elementos internos */
 }
 
-/* Estilos del botón */
+/* 
+  .image:
+  - Estiliza la imagen del personaje para que sea responsiva y tenga bordes redondeados.
+*/
+.image {
+  width: 50%;            /* La imagen ocupa el ancho completo del contenedor */
+  height: auto;           /* La altura se ajusta de forma proporcional al ancho */
+  border-radius: 5px;     /* Bordes levemente redondeados */
+  margin: 10px 0;         /* Margen vertical para separar la imagen del resto del contenido */
+}
+
+/* 
+  .button:
+  - Estiliza el botón que cierra el modal.
+  - Tiene fondo verde, texto blanco, bordes redondeados y una transición para el efecto hover.
+*/
 .button {
-  background: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  background: #4CAF50;     /* Color de fondo verde */
+  color: white;            /* Texto en blanco */
+  border: none;            /* Sin bordes para un look limpio */
+  padding: 10px 20px;      /* Espaciado interno para mayor tamaño y comodidad al hacer clic */
+  border-radius: 5px;      /* Bordes redondeados */
+  font-size: 16px;         /* Tamaño de fuente adecuado para la lectura */
+  cursor: pointer;         /* Cursor pointer para indicar que es clickeable */
+  transition: background 0.3s ease; /* Transición suave para el cambio de color en hover */
 }
 
+/* 
+  .button:hover:
+  - Cambia el color de fondo cuando el usuario pasa el cursor sobre el botón.
+*/
 .button:hover {
-  background: #388E3C;
+  background: #388E3C;     /* Color de fondo más oscuro al hacer hover para dar feedback visual */
 }
