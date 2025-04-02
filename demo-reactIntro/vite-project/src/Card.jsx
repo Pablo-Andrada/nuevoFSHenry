@@ -6,7 +6,7 @@ const Card = ({character, handleOnClick}) => {
         <div>
             <h2>{name}</h2>
             <h3>{house}</h3>
-            <button onClick={()=>handleOnClick(id)} >Ver detalle</button>        
+            <button onClick={() => handleOnClick(id)}>Ver detalle</button>     
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import './App.css'
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import Detail from './Detail';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -14,7 +15,9 @@ function App() {
     setId(id);
     setDetail(true);
   };
-
+  const handleOnClose = () => {
+    setDetail(false);
+  };
   useEffect(() => {
     fetch('https://hp-api.onrender.com/api/characters')
       .then((response) => response.json())
@@ -27,6 +30,8 @@ function App() {
           return <Card key={character.id} character={character} handleOnClick={handleOnClick} />
         })
       }
+            {/* Renderiza el modal si detail es true */}
+            {detail && <Detail handleOnClose={handleOnClose} />}
     </div>
   ); 
 }
