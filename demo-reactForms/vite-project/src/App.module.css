@@ -1,0 +1,74 @@
+/* App.module.css */
+
+/* ✅ Contenedor general para centrar el formulario */
+.container {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    background-color: #f0f2f5; /* Color de fondo */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina relleno */
+    position: absolute; /* Se asegura de ocupar toda la pantalla */
+    top: 0;
+    left: 0;
+  }
+  
+  /* ✅ Caja del formulario */
+  .formContainer {
+    width: 350px; /* Tamaño óptimo */
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* ✅ Título */
+  .title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Agrupación de inputs */
+  .inputGroup {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* ✅ Estilo de etiquetas */
+  .label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* ✅ Inputs */
+  .input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* 📌 Asegura que el padding no afecte el tamaño */
+  }
+  
+  /* ✅ Botón */
+  .button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* ✅ Efecto hover */
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
