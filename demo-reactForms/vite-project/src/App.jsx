@@ -8,12 +8,28 @@ function App() {
     username: "",
     password: "",
   });
+  console.log(userData);
+  
+  const handleInputChange = (event) => {   
+    const { name, value } = event.target;
 
+    setUserData({
+      ...userData,
+      [name]: value
+    });
+  }
 
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    alert(`Usuario logueado correctamente. Username: ${userData.username}`)
+  }
 
   return (
     <div className={styles.container}>
-      <form className={styles.formContainer}>
+      <form
+        className={styles.formContainer}
+        onSubmit={handleOnSubmit}
+      >
         <h2 className={styles.title}>LOGIN</h2>
 
         <div className={styles.inputGroup}>
@@ -24,6 +40,7 @@ function App() {
             value={userData.username}
             name="username"
             placeholder="example@gmail.com"
+            onChange={handleInputChange}
           />
         </div>
 
@@ -35,6 +52,7 @@ function App() {
             value={userData.password}
             name="password"
             placeholder="*******"
+            onChange={handleInputChange}
           />
         </div>
 
