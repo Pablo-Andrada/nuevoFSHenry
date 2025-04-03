@@ -23,7 +23,7 @@ function App() {
     });
 
     const errors = validate(userData);
-    setErrors(errors);  // Todo esto es igual a hacer: setErrors(validate(userData)); ambos devuelven un objeto
+    setErrors(errors);  // Todo esto es igual a hacer: setErrors(validate(userData)); ambos devuelven un objeto!
   }
 
   const handleOnSubmit = (event) => {
